@@ -8,7 +8,6 @@ def is_a_game(element)
         if !(element[0].kind_of?(Array) and element[1].kind_of?(Array))
           return false
         else
-          puts "two arrays!!"
           if element[0][0].kind_of? String and element[1][1].kind_of? String
             return true
           else
