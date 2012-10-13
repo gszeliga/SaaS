@@ -26,9 +26,18 @@ end
 
 module Enumerable
   def palindrome?
-      self.to_a.each_index { |index|
-        return false unless self[index] == self[(self.length - 1) - index]
+      # self.to_a.each_index { |index|
+      #   return false unless self[index] == self[(self.length - 1) - index]
+      # }
+      # return true
+
+      index = 0
+
+      self.reverse_each { |item|
+        return false unless self.to_a[index] == item
+        index = index + 1
       }
+
       return true
   end
 end
@@ -42,4 +51,3 @@ puts 5.rupees.in(:yen)
 puts "A man, a plan, a canal -- Panama".palindrome?
 puts [1,2,3,2,1].palindrome?
 puts [1,2,3,2,2].palindrome?
-#puts [1,2,3,2,2].palindrome?
